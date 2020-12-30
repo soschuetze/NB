@@ -13,7 +13,8 @@ var tarotItemName: String
 }
 
 class TarotViewController: UIViewController {
-
+/*get the dimensions of the phone screen
+     used later in resizing the cards*/
     lazy var screenSize:CGRect = {
         return UIScreen.main.bounds
     }()
@@ -66,23 +67,26 @@ class TarotViewController: UIViewController {
     }
 
     private func timerSetup(){
+        /*timer responsible for determining how long shuffling animation takes and repeating shuffling function*/
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(shuffleCards), userInfo: nil, repeats: false)
         
     }
    private func timerSetup2(){
+    /*timer responsible for the second card that is added*/
           timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(shuffleDouble), userInfo: nil, repeats: false)
           
       }
     @objc private func shuffleCards(){
        
         if number < tImages.count{
+            
             timerSetup()
             let flip = Int.random(in: 1..<3)
-            
+            /*determines whether cards will be "reversed" by getting a random number of either 1 or 2*/
             if flip == 1{
-                let cardNum = Int.random(in: 0..<tImages.count-1)
+                let cardNum = Int.random(in: 0..<tImages.count-1)//gets random number to determine which card in array is chosen
                 tarotImage.image = UIImage(named: tImages[cardNum].tarotItemName)
-                self.tarotImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+                self.tarotImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi)) //rotates card so that it is reversed
                 if number == (tImages.count)-1{
                 cardLabel.text = tImages[cardNum].tarotItemName + " reversed"
                 }
@@ -105,13 +109,13 @@ class TarotViewController: UIViewController {
  
     private func setupTarot(){
            
-          
            tarotImage.image = UIImage(named: tImages[Int.random(in: 0..<tImages.count-1)].tarotItemName)
            
        }
     
     
     private func addDoubleCard(){
+        /*second card and label is adding using proportions of screen*/
         tarotImage.frame = CGRect(x: screenWidth/4, y: screenHeight/5.5, width: screenWidth * 0.5, height:screenHeight * 0.3)
         doubleImage.frame = CGRect(x: screenWidth/4, y: screenHeight/1.8, width: screenWidth * 0.5, height:screenHeight * 0.3)
         cardLabel.text = ""
@@ -123,6 +127,7 @@ class TarotViewController: UIViewController {
     }
     
     @objc private func shuffleDouble(){
+        /*does same function as the initial shuffle function except to the second card*/
         if numberDouble < tImages.count{
                    timerSetup2()
                    let flip2 = Int.random(in: 1..<3)
@@ -130,7 +135,7 @@ class TarotViewController: UIViewController {
                    if flip2 == 1{
                     let cardNum2 = Int.random(in: 0..<tImages.count-1)
                        doubleImage.image = UIImage(named: tImages[cardNum2].tarotItemName)
-                       self.doubleImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+                       self.doubleImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi)) //rotates image so that it is reversed
                        if numberDouble == (tImages.count)-1{
                        doubleLabel.text = tImages[cardNum2].tarotItemName + " reversed"
                        }
@@ -150,7 +155,7 @@ class TarotViewController: UIViewController {
         
     }
     private func originalSize(){
-     
+     /*makes second card/label not visible and resizes original card to the intial size using the dimensions of the screen*/
         doubleImage.image = nil
         doubleLabel.text = nil
         cardLabel.text = ""
