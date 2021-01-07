@@ -49,13 +49,12 @@ class TarotViewController: UIViewController {
     
    
     var tImages = (1...22).compactMap { ItemTarot(tarotItemName: "card\($0)") }
-    
    
     var timer = Timer()
     var number = 1
     var numberDouble = 1
     
-    
+    var tarotDict:[Int: String] = [1:"magician", 2:"priestess", 3:"empress", 4:"emporer", 5:"fool", 6:"hierophant", 7:"lovers", 8:"chariot", 9:"strength", 10:"hermit", 11:"fortune", 12:"justice",13:"hangedman", 14:"death", 15:"temperance", 16:"devil", 17:"tower", 18:"star", 19:"moon", 20:"sun", 21:"judgement", 22:"world"]
    
     
     override func viewDidLoad() {
@@ -88,7 +87,7 @@ class TarotViewController: UIViewController {
                 tarotImage.image = UIImage(named: tImages[cardNum].tarotItemName)
                 self.tarotImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi)) //rotates card so that it is reversed
                 if number == (tImages.count)-1{
-                cardLabel.text = tImages[cardNum].tarotItemName + " reversed"
+                    cardLabel.text = tarotDict[cardNum] ?? "" + " reversed"
                 }
                 
             }else{
@@ -96,7 +95,7 @@ class TarotViewController: UIViewController {
                 tarotImage.image = UIImage(named: tImages[cardNum].tarotItemName)
                 self.tarotImage.transform = CGAffineTransform(rotationAngle: CGFloat(0))
                 if number == (tImages.count)-1{
-                cardLabel.text = tImages[cardNum].tarotItemName
+                cardLabel.text = tarotDict[cardNum] ?? ""
                 }
             }
             
@@ -137,7 +136,7 @@ class TarotViewController: UIViewController {
                        doubleImage.image = UIImage(named: tImages[cardNum2].tarotItemName)
                        self.doubleImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi)) //rotates image so that it is reversed
                        if numberDouble == (tImages.count)-1{
-                       doubleLabel.text = tImages[cardNum2].tarotItemName + " reversed"
+                       doubleLabel.text = tarotDict[cardNum2] ?? "" + " reversed"
                        }
                        
                    }else{
@@ -145,7 +144,7 @@ class TarotViewController: UIViewController {
                        doubleImage.image = UIImage(named: tImages[cardNum2].tarotItemName)
                        self.doubleImage.transform = CGAffineTransform(rotationAngle: CGFloat(0))
                        if numberDouble == (tImages.count)-1{
-                       doubleLabel.text = tImages[cardNum2].tarotItemName
+                       doubleLabel.text = tarotDict[cardNum2] ?? ""
                        }
                    }
                    
