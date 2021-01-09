@@ -34,6 +34,7 @@ class TarotViewController: UIViewController {
     shuffleCards()
     }
     @IBAction func doubleCardButton(_ sender: Any) {
+        descLabel.text = ""
         addDoubleCard()
         number = 0
         numberDouble = 0
@@ -98,6 +99,9 @@ class TarotViewController: UIViewController {
           timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(shuffleDouble), userInfo: nil, repeats: false)
           
       }
+    
+    let descLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+    
     @objc private func shuffleCards(){
        
         if number < tImages.count{
@@ -112,6 +116,12 @@ class TarotViewController: UIViewController {
                 self.tarotImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi)) //rotates card so that it is reversed
                 if number == (tImages.count)-1{
                     cardLabel.text = tarotDict[cardNum]?[0] ?? "" + " reversed"
+                    descLabel.center = CGPoint(x: 160, y: 285)
+                    descLabel.textAlignment = .center
+                    descLabel.text = tarotDict[cardNum]?[1] ?? ""
+                    descLabel.numberOfLines = 0
+                    descLabel.sizeToFit()
+                    self.view.addSubview(descLabel)
                 }
                 
             }else{
@@ -120,6 +130,12 @@ class TarotViewController: UIViewController {
                 self.tarotImage.transform = CGAffineTransform(rotationAngle: CGFloat(0))
                 if number == (tImages.count)-1{
                     cardLabel.text = tarotDict[cardNum]?[0] ?? ""
+                    descLabel.center = CGPoint(x: screenWidth/2, y: screenHeight/2)
+                    descLabel.textAlignment = .center
+                    descLabel.text = tarotDict[cardNum]?[1] ?? ""
+                    descLabel.numberOfLines = 0
+                    descLabel.sizeToFit()
+                    self.view.addSubview(descLabel)
                 }
             }
             number += 1
@@ -178,6 +194,7 @@ class TarotViewController: UIViewController {
     }
     private func originalSize(){
      /*makes second card/label not visible and resizes original card to the intial size using the dimensions of the screen*/
+        descLabel.text = ""
         doubleImage.image = nil
         doubleLabel.text = nil
         cardLabel.text = ""
