@@ -122,7 +122,7 @@ class TarotViewController: UIViewController {
                 if number == (tImages.count)-1{
                     cardLabel.center = CGPoint(x: tarotImage.frame.midX, y: tarotImage.frame.minY-20)
                     cardLabel.text = tarotDict[cardNum]?[0] ?? "" + " reversed"
-                    descLabel.frame = CGRect(x: 0, y: 0, width: tarotImage.frame.width, height: tarotImage.frame.height)
+                    descLabel.frame = CGRect(x: 0, y: 0, width: tarotImage.frame.width-20, height: tarotImage.frame.height)
                     descLabel.center = CGPoint(x: tarotImage.frame.midX, y: tarotImage.frame.midY)
                     descLabel.textAlignment = .center
                     descLabel.text = tarotDict[cardNum]?[1] ?? ""
@@ -138,7 +138,7 @@ class TarotViewController: UIViewController {
                 if number == (tImages.count)-1{
                     cardLabel.center = CGPoint(x: tarotImage.frame.midX, y: tarotImage.frame.minY-20)
                     cardLabel.text = tarotDict[cardNum]?[0] ?? ""
-                    descLabel.frame = CGRect(x: 0, y: 0, width: tarotImage.frame.width, height: tarotImage.frame.height)
+                    descLabel.frame = CGRect(x: 0, y: 0, width: tarotImage.frame.width-20, height: tarotImage.frame.height)
                     descLabel.center = CGPoint(x: tarotImage.frame.midX, y: tarotImage.frame.midY)
                     descLabel.textAlignment = .center
                     descLabel.text = tarotDict[cardNum]?[1] ?? ""
@@ -185,7 +185,7 @@ class TarotViewController: UIViewController {
                        self.doubleImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi)) //rotates image so that it is reversed
                        if numberDouble == (tImages.count)-1{
                         doubleLabel.text = tarotDict[cardNum2]?[0] ?? "" + " reversed"
-                        descLabel2.frame = CGRect(x: 0, y: 0, width: doubleImage.frame.width, height: doubleImage.frame.height)
+                        descLabel2.frame = CGRect(x: 0, y: 0, width: doubleImage.frame.width-20, height: doubleImage.frame.height)
                         descLabel2.center = CGPoint(x: doubleImage.frame.midX, y: doubleImage.frame.midY)
                         descLabel2.textAlignment = .center
                         descLabel2.text = tarotDict[cardNum2]?[1] ?? ""
@@ -200,7 +200,7 @@ class TarotViewController: UIViewController {
                        self.doubleImage.transform = CGAffineTransform(rotationAngle: CGFloat(0))
                        if numberDouble == (tImages.count)-1{
                         doubleLabel.text = tarotDict[cardNum2]?[0] ?? ""
-                        descLabel2.frame = CGRect(x: 0, y: 0, width: doubleImage.frame.width, height: doubleImage.frame.height)
+                        descLabel2.frame = CGRect(x: 0, y: 0, width: doubleImage.frame.width-20, height: doubleImage.frame.height)
                         descLabel2.center = CGPoint(x: doubleImage.frame.midX, y: doubleImage.frame.midY)
                         descLabel2.textAlignment = .center
                         descLabel2.text = tarotDict[cardNum2]?[1] ?? ""
