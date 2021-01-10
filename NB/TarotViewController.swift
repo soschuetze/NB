@@ -44,6 +44,7 @@ class TarotViewController: UIViewController {
         shuffleCards()
         shuffleDouble()
     }
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var cardLabel: UILabel!
     @IBOutlet weak var doubleLabel: UILabel!
@@ -52,7 +53,8 @@ class TarotViewController: UIViewController {
     @IBOutlet weak var cardIsLabel: UILabel!
     @IBOutlet weak var doubleImage: UIImageView!
     
-    
+   
+    private var showingBack = false
    
     var tImages = (1...22).compactMap { ItemTarot(tarotItemName: "card\($0)") }
    
@@ -88,9 +90,11 @@ class TarotViewController: UIViewController {
         super.viewDidLoad()
             shuffleCards()
             setupTarot()
+        
        
      
     }
+  
 
     private func timerSetup(){
         /*timer responsible for determining how long shuffling animation takes and repeating shuffling function*/
