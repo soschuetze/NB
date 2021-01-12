@@ -54,8 +54,6 @@ class TarotViewController: UIViewController {
     @IBOutlet weak var doubleImage: UIImageView!
     
    
-    private var showingBack = false
-   
     var tImages = (1...22).compactMap { ItemTarot(tarotItemName: "card\($0)") }
    
     var timer = Timer()
@@ -160,7 +158,10 @@ class TarotViewController: UIViewController {
  
     private func setupTarot(){
            
-           tarotImage.image = UIImage(named: tImages[Int.random(in: 0..<tImages.count-1)].tarotItemName)
+        tarotImage.image = UIImage(named: tImages[Int.random(in: 0..<tImages.count-1)].tarotItemName)
+        tarotImage.frame = CGRect(x: 0, y: 0, width: (screenWidth*0.6), height:screenHeight * 0.6)
+        tarotImage.center = CGPoint(x: screenWidth/2, y: screenHeight/2)
+        self.view.addSubview(tarotImage)
            
        }
     
@@ -225,7 +226,9 @@ class TarotViewController: UIViewController {
         doubleImage.image = nil
         doubleLabel.text = nil
         cardLabel.text = ""
-        tarotImage.frame = CGRect(x: screenWidth/7.40, y: screenHeight/5, width: (screenWidth*0.75), height:screenHeight * 0.75)
+        tarotImage.frame = CGRect(x: 0, y: 0, width: (screenWidth*0.6), height:screenHeight * 0.6)
+        tarotImage.center = CGPoint(x: screenWidth/2, y: screenHeight/2)
+        self.view.addSubview(tarotImage)
         cardLabel.textAlignment = NSTextAlignment.center
         cardLabel.frame = CGRect(x: screenWidth/9, y: screenHeight/5.5, width: screenWidth * 0.9, height: 30)
          cardLabel.font = cardLabel.font.withSize(30)
