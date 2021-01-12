@@ -168,12 +168,20 @@ class TarotViewController: UIViewController {
     
     private func addDoubleCard(){
         /*second card and label is adding using proportions of screen*/
-        tarotImage.frame = CGRect(x: screenWidth/4, y: screenHeight/5.5, width: screenWidth * 0.5, height:screenHeight * 0.3)
-        doubleImage.frame = CGRect(x: screenWidth/4, y: screenHeight/1.8, width: screenWidth * 0.5, height:screenHeight * 0.3)
+        tarotImage.frame = CGRect(x: 0, y: 0, width: screenWidth/3, height:screenHeight/3)
+        tarotImage.center = CGPoint(x: screenWidth/4, y: screenHeight/2)
+        self.view.addSubview(tarotImage)
+        
+        doubleImage.frame = CGRect(x: 0, y: 0, width: screenWidth/3, height:screenHeight/3)
+        doubleImage.center = CGPoint(x: screenWidth*0.75, y: screenHeight/2)
+        self.view.addSubview(doubleImage)
+        
         cardLabel.text = ""
         cardLabel.frame = CGRect(x: screenWidth/7.5, y: screenHeight/7, width: screenWidth * 0.75, height: cardLabel.frame.size.height)
         cardLabel.font = cardLabel.font.withSize(20)
+        
         doubleLabel.frame = CGRect(x: screenWidth/7.5, y: screenHeight/2, width: screenWidth * 0.75, height: cardLabel.frame.size.height)
+        doubleLabel.center = CGPoint(x: doubleImage.frame.midX, y: doubleImage.frame.minY-20)
         doubleLabel.font = doubleLabel.font.withSize(20)
         
     }
