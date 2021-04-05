@@ -101,14 +101,6 @@ struct ItemLabel {
 }
 class ViewController: UIViewController {
 
-    @IBAction func tarotButton(_ sender: Any) {
-    
-    performSegue(withIdentifier: "segue", sender: self)
-    
-        struct nVariable{
-            static var n = 1
-        }
-    }
     
   
    
