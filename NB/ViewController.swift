@@ -9,6 +9,8 @@
 import UIKit
 extension UIView {
     
+    
+    
     @IBInspectable
     var cornerRadius: CGFloat {
         get {
@@ -99,17 +101,17 @@ struct Item {
 struct ItemLabel {
     var labelName: String
 }
-class ViewController: UIViewController {
 
+
+class ViewController: UIViewController {
     
-  
-   
-   
-  
+    @IBOutlet weak var dateLabel: UILabel!
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       
+        dateLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .long, timeStyle: .none)
         
     }
     override func viewWillAppear(_ animated: Bool) {
