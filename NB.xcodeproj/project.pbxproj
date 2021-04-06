@@ -15,6 +15,7 @@
 		900BD53E248EAD8C00E15B89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900BD53C248EAD8C00E15B89 /* LaunchScreen.storyboard */; };
 		900BD549248EAD8C00E15B89 /* NBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900BD548248EAD8C00E15B89 /* NBTests.swift */; };
 		900BD554248EAD8C00E15B89 /* NBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900BD553248EAD8C00E15B89 /* NBUITests.swift */; };
+		90BFAC35261CE446001C7467 /* TarotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFAC34261CE446001C7467 /* TarotViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		900BD54F248EAD8C00E15B89 /* NBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		900BD553248EAD8C00E15B89 /* NBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBUITests.swift; sourceTree = "<group>"; };
 		900BD555248EAD8C00E15B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90BFAC34261CE446001C7467 /* TarotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				900BD53A248EAD8C00E15B89 /* Assets.xcassets */,
 				900BD53C248EAD8C00E15B89 /* LaunchScreen.storyboard */,
 				900BD53F248EAD8C00E15B89 /* Info.plist */,
+				90BFAC34261CE446001C7467 /* TarotViewController.swift */,
 			);
 			path = NB;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				900BD536248EAD8700E15B89 /* ViewController.swift in Sources */,
+				90BFAC35261CE446001C7467 /* TarotViewController.swift in Sources */,
 				900BD532248EAD8700E15B89 /* AppDelegate.swift in Sources */,
 				900BD534248EAD8700E15B89 /* SceneDelegate.swift in Sources */,
 			);
