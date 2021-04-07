@@ -15,7 +15,7 @@ class TarotViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        images = [#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back")]
+        images = [#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back")]
         
         for i in 0..<images.count {
             let imageView = UIImageView()
@@ -24,7 +24,7 @@ class TarotViewController: UIViewController {
             imageView.contentMode = .scaleAspectFit
             imageView.image = images[i]
                     
-            scrollView.contentSize.width = scrollView.frame.size.width * CGFloat(i + 1)
+            scrollView.contentSize.width = scrollView.frame.size.width * 4//CGFloat(i + 1)
             scrollView.addSubview(imageView)
         // Do any additional setup after loading the view.
     }
