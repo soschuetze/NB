@@ -111,21 +111,8 @@
                                 <rect key="frame" x="195" y="651" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxF-PC-5YK">
-                                <rect key="frame" x="0.0" y="106" width="414" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Draw Your Card">
-                                        <attributes>
-                                            <font key="NSFont" size="25" name="AppleMyungjo"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" showsVerticalScrollIndicator="NO" minimumZoomScale="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ozu-RW-2Qs">
-                                <rect key="frame" x="0.0" y="135" width="414" height="444"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="374"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="PQ1-Nu-PWm"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="3iH-8p-jTc"/>
@@ -147,6 +134,19 @@
                                 <rect key="frame" x="331" y="651" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxF-PC-5YK">
+                                <rect key="frame" x="0.0" y="135" width="414" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Draw Your Card">
+                                        <attributes>
+                                            <font key="NSFont" size="25" name="AppleMyungjo"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Kl-qK-P0D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

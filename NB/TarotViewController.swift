@@ -18,11 +18,11 @@ class TarotViewController: UIViewController {
         images = [#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back")]
         
         for i in 0..<images.count {
-            let imageView = UIImageView()
+            let imageView = UIButton()
             let x = self.view.frame.size.width * CGFloat(i)
-            imageView.frame = CGRect(x: x/2, y: 0, width: self.view.frame.width/2, height: self.view.frame.height/2)
+            imageView.frame = CGRect(x: x/2, y: 0, width: self.view.frame.width/2, height: self.view.frame.height/2.5)
             imageView.contentMode = .scaleAspectFit
-            imageView.image = images[i]
+            imageView.setImage(images[i], for: .normal)
                     
             scrollView.contentSize.width = scrollView.frame.size.width * 4//CGFloat(i + 1)
             scrollView.addSubview(imageView)
