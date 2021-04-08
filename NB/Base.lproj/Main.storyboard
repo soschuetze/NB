@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBq-zL-yEo">
-                                <rect key="frame" x="79" y="265" width="249" height="409"/>
+                                <rect key="frame" x="79" y="265" width="249" height="408"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="back"/>
                                 <connections>
@@ -51,7 +51,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIz-Xm-qVP">
-                                <rect key="frame" x="20" y="183" width="374" height="21"/>
+                                <rect key="frame" x="20" y="182" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
@@ -159,6 +159,9 @@
                         <outlet property="card1" destination="nCd-mj-63I" id="ENh-Kc-WqM"/>
                         <outlet property="card2" destination="NEC-9R-Sh0" id="VJx-lJ-n0r"/>
                         <outlet property="card3" destination="Sbw-eh-qIf" id="Qht-Td-a2l"/>
+                        <outlet property="flip1" destination="JPX-Wa-202" id="Ffv-aT-bid"/>
+                        <outlet property="flip2" destination="KoA-c0-muB" id="XW3-bD-UYN"/>
+                        <outlet property="flip3" destination="5Bk-O0-u6b" id="tcf-7k-ixa"/>
                         <outlet property="scrollView" destination="ozu-RW-2Qs" id="bFX-b4-UTZ"/>
                     </connections>
                 </viewController>
