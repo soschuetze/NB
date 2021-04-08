@@ -9,11 +9,21 @@
 import UIKit
 
 class ReadingViewController: UIViewController {
+    
+    var card1R: UIImage = #imageLiteral(resourceName: "back")
+    var card2R: UIImage = #imageLiteral(resourceName: "back")
+    var card3R: UIImage = #imageLiteral(resourceName: "back")
 
+    @IBOutlet weak var card1IV: UIImageView!
+    @IBOutlet weak var card2IV: UIImageView!
+    @IBOutlet weak var card3IV: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        card1IV.image = card1R
+        card2IV.image = card2R
+        card3IV.image = card3R
     }
     
 

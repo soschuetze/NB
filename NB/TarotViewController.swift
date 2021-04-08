@@ -20,6 +20,8 @@ class TarotViewController: UIViewController {
     @IBOutlet weak var card2: UIImageView!
     @IBOutlet weak var card3: UIImageView!
     
+ 
+    
     var imageView = UIButton()
 
     var tarotCards: [UIImage] = [
@@ -67,6 +69,8 @@ class TarotViewController: UIViewController {
         flip3.layer.zPosition = -5
         card3.image = tarotCards[randCardNum3]
     }
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         images = [#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back"),#imageLiteral(resourceName: "back")]
@@ -88,6 +92,14 @@ class TarotViewController: UIViewController {
             imageView.addTarget(self, action: #selector(cardSelector2), for: .touchUpInside)
             imageView.addTarget(self, action: #selector(cardSelector3), for: .touchUpInside)
     }
-       
 }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is ReadingViewController {
+            let vc = segue.destination as? ReadingViewController
+            vc?.card1R = card1.image ?? #imageLiteral(resourceName: "back")
+            vc?.card2R = card2.image ?? #imageLiteral(resourceName: "back")
+            vc?.card3R = card3.image ?? #imageLiteral(resourceName: "back")
+        }
+    }
 }
