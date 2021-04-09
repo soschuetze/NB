@@ -48,8 +48,8 @@ class ReadMoreViewController: UIViewController {
 
         mainCardIV.image = mainCard
         cardName.text = tarotDescriptions[mainCard]?[0]
-        cardTheme.text = tarotDescriptions[mainCard]?[1]
-        cardDescription.text = tarotDescriptions[mainCard]?[2]
+        cardTheme.text = "Theme: "+(tarotDescriptions[mainCard]?[1])!
+        cardDescription.text = "Meaning: "+(tarotDescriptions[mainCard]?[2])!
         // Do any additional setup after loading the view.
     }
     
