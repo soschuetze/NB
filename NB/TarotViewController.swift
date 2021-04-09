@@ -20,7 +20,6 @@ class TarotViewController: UIViewController {
     @IBOutlet weak var card2: UIImageView!
     @IBOutlet weak var card3: UIImageView!
     
- 
     
     var imageView = UIButton()
 

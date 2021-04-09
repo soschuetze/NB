@@ -53,6 +53,9 @@ class ReadingViewController: UIViewController {
     @IBOutlet weak var reading2Label: UILabel!
     @IBOutlet weak var reading3Label: UILabel!
     
+    @IBOutlet weak var readMore1: UIButton!
+    @IBOutlet weak var readMore2: UIButton!
+    @IBOutlet weak var readMore3: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +73,21 @@ class ReadingViewController: UIViewController {
         reading2Label.text = tarotDesc[card2R]?[1]
         reading3Label.text = tarotDesc[card3R]?[1]
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is ReadMoreViewController {
+            let vc2 = segue.destination as? ReadMoreViewController
+            if readMore1.isTouchInside{
+                vc2?.mainCard = card1IV.image ?? #imageLiteral(resourceName: "back")
+            }
+            if readMore2.isTouchInside{
+                vc2?.mainCard = card2IV.image ?? #imageLiteral(resourceName: "back")
+            }
+            if readMore3.isTouchInside{
+                vc2?.mainCard = card3IV.image ?? #imageLiteral(resourceName: "back")
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
