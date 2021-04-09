@@ -50,6 +50,7 @@ class TarotViewController: UIViewController {
     
     
     var images = [UIImage]()
+    
     @objc func cardSelector1(){
         let randCardNum1 = Int.random(in: 0...21)
         imageView.setImage(tarotCards[randCardNum1], for: .normal)
