@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FirstStepViewController.swift
 //  NB
 //
 //  Created by Sinclaire Schuetze on 4/11/21.
@@ -8,14 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    var timer = Timer()
+class FirstStepViewController: UIViewController {
+
+    @IBAction func actionButtonTapped(_ sender: UIButton) {
+        if let pageController = parent as? MainPageViewController{
+            pageController.pushNext()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .long, timeStyle: .none)
+
         // Do any additional setup after loading the view.
     }
     

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ThirdStepViewController.swift
 //  NB
 //
 //  Created by Sinclaire Schuetze on 4/11/21.
@@ -8,14 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    var timer = Timer()
+class ThirdStepViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .long, timeStyle: .none)
+
         // Do any additional setup after loading the view.
     }
     

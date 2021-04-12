@@ -20,8 +20,12 @@ class TarotViewController: UIViewController {
     @IBOutlet weak var card2: UIImageView!
     @IBOutlet weak var card3: UIImageView!
     
+    var selectedCardNum = 0
+    
     
     var imageView = UIButton()
+    
+    var buttonArray = [UIButton]()
 
     var tarotCards: [UIImage] = [
         UIImage(named: "card1")!,
@@ -53,7 +57,8 @@ class TarotViewController: UIViewController {
     
     @objc func cardSelector1(){
         let randCardNum1 = Int.random(in: 0...21)
-        imageView.setImage(tarotCards[randCardNum1], for: .normal)
+        buttonArray[selectedCardNum].setImage(tarotCards[randCardNum1], for: .normal)
+        //imageView.setImage(tarotCards[randCardNum1], for: .normal)
         flip1.layer.zPosition = -5
         card1.image = tarotCards[randCardNum1]
     }
@@ -77,7 +82,27 @@ class TarotViewController: UIViewController {
         scrollView.isUserInteractionEnabled = true
         scrollView.delaysContentTouches = false
         
-        for i in 0..<images.count {
+        for i in 0..<images.count{
+            imageView = UIButton()
+            let x = self.view.frame.size.width * CGFloat(i)
+            imageView.frame = CGRect(x: x/2, y: 0, width: self.view.frame.width/2, height: self.view.frame.height/2.5)
+            imageView.contentMode = .scaleAspectFit
+            imageView.setImage(images[i], for: .normal)
+            buttonArray.append(imageView)
+                    
+            scrollView.contentSize.width = scrollView.frame.size.width * 4
+            scrollView.addSubview(buttonArray[i])
+            
+            selectedCardNum = i
+            buttonArray[i].addTarget(self, action: #selector(cardSelector1), for: .touchUpInside)
+        
+        
+            
+        }
+        
+        
+        
+        /*for i in 0..<images.count {
             imageView = UIButton()
             let x = self.view.frame.size.width * CGFloat(i)
             imageView.frame = CGRect(x: x/2, y: 0, width: self.view.frame.width/2, height: self.view.frame.height/2.5)
@@ -87,11 +112,13 @@ class TarotViewController: UIViewController {
             scrollView.contentSize.width = scrollView.frame.size.width * 4
             scrollView.addSubview(imageView)
         // Do any additional setup after loading the view.
+         
+         imageView.addTarget(self, action: #selector(cardSelector1), for: .touchUpInside)
+         imageView.addTarget(self, action: #selector(cardSelector2), for: .touchUpInside)
+         imageView.addTarget(self, action: #selector(cardSelector3), for: .touchUpInside)
             
-            imageView.addTarget(self, action: #selector(cardSelector1), for: .touchUpInside)
-            imageView.addTarget(self, action: #selector(cardSelector2), for: .touchUpInside)
-            imageView.addTarget(self, action: #selector(cardSelector3), for: .touchUpInside)
-    }
+    }**/
+        
 }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {

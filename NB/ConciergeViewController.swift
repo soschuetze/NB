@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ConciergeViewController.swift
 //  NB
 //
 //  Created by Sinclaire Schuetze on 4/11/21.
@@ -8,17 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    var timer = Timer()
+class ConciergeViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .long, timeStyle: .none)
+ 
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        if LandscapeManager.shared.isFirstLaunch {
+            performSegue(withIdentifier: "toOnboarding", sender: nil)
+            LandscapeManager.shared.isFirstLaunch = true
+        } else {
+            performSegue(withIdentifier: "toMain", sender: nil)
+        }
+    }
+
 
     /*
     // MARK: - Navigation
@@ -31,3 +36,8 @@ class ViewController: UIViewController {
     */
 
 }
+extension UIStoryboard {
+    static let onboarding = UIStoryboard(name: "Onboarding", bundle: nil)
+    static let main = UIStoryboard(name: "Main", bundle: nil)
+}
+
